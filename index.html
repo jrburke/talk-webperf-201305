@@ -65,6 +65,13 @@
 	</head>
 
 	<body>
+		<style>
+			html body {
+				background-position:center !important;
+				background-size: 100% !important;
+			}
+		</style>
+
 
 		<div class="reveal">
 
@@ -74,10 +81,7 @@
 
 				<style>
 					html.state1 body {
-						/*  tudedude: http://www.flickr.com/photos/tudedude/4414889087/ */
 						background:url("images/state1.jpg");
-						background-position:center;
-						background-size: 100%;
 					}
 				</style>
 				<section data-state="state1"
@@ -93,10 +97,7 @@
 
 				<style>
 					html.state2 body {
-						/* Jaypeg: http://www.flickr.com/photos/jaypeg/250299003/ */
 						background:url("images/state2.jpg");
-						background-position:center;
-						background-size: 100%;
 					}
 				</style>
 				<section data-state="state2"
@@ -110,6 +111,154 @@
 					* Different interaction model
 				</script></section>
 
+				<style>html.state3 body { background:url("images/state3.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Web app
+
+					* Single page
+					* Transitions instead of page reloads
+					* Limited deep linking, more personal state than shared
+
+				</script></section>
+
+				<style>html.state4 body { background:url("images/state4.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Constraints
+
+					* Latency
+					* Modest computing power
+					* Slow storage
+					* Battery consumption
+
+				</script></section>
+
+				<style>html.state5 body { background:url("images/state5.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Native vs web
+
+					* Excuse to spend more money on experience
+					* Access to platform APIs
+					* Leverage web and use wrappers, phonegap
+					* FirefoxOS: best of both: platform APIs and web.
+
+				</script></section>
+
+				<style>html.state6 body { background:url("images/state6.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Web vs store distribution
+
+					* Web: better terms, less platform access
+					* Store: better platform access, better user assurance, worse terms
+
+				</script></section>
+
+				<style>html.state7 body { background:url("images/state7.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Decide
+
+					* What does it need to do? Platform APIs
+
+				</script></section>
+
+				<style>html.state8 body { background:url("images/state8.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Specific tech
+
+					* Related via work on email app in Gaia/FirefoxOS
+
+				</script></section>
+
+				<style>html.state9 body { background:url("images/state9.jpg");}</style>
+				<section data-state="state3"
+					data-attr-desc=""
+					data-attr=""
+					data-markdown><script type="text/template">
+					## Startup performance
+
+					* Use local UI
+					* Use local data
+					* Bundle, delay loading
+
+				</script></section>
+
+
+
+
+<!--
+
+
+
+					## Local UI
+
+					* AppCache
+					* "app" wrappers: FirefoxOS: .zip file, Phonegap for others.
+
+					## Local data
+
+					* IndexedDB
+					* localStorage (warning)
+					* Cookies!
+
+					## AppCache
+
+					* Has issues [link]
+					* Compared to native wrappers though, not so bad.
+					* Limit to single page web apps.
+					* Will have to support multiple versions.
+					* Proposals for future [links]
+
+					## AppCache
+
+					* Helper script to generate appcache
+					* Events/test app
+
+					## Delay loading
+
+					* Script parse and execution
+					* You know I'm going to say modules
+					* Home roll it
+
+					## IndexedDB
+
+					* A bit weird, async
+					* Helpers [links]
+					* iOS WebKit adapters, or branch web SQL.
+
+					## Runtime performance
+
+					* iOS WebView penalty
+					* Web Workers, help with scroll perf
+					* Limit DOM
+					* Cooperatively multitask (setTimeout)
+
+					## Shameless plug
+
+					* FirefoxOS, develop there, wrap it for others
+					* Web runtime on Android
+					* Nice SDK/dev tools [links]
+					* Develop an app, get a phone
+					* We are really huge in Europe
+
+
+-->
 			</div>
 
 		</div>
