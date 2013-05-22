@@ -69,6 +69,7 @@
 			html body {
 				background-position:center !important;
 				background-size: 100% !important;
+				background-repeat: no-repeat;
 			}
 		</style>
 
@@ -92,9 +93,10 @@
 
 					#### [James Burke](http://jrburke.com) | [github](https://github.com/jrburke) | [twitter](https://twitter.com/jrburke)
 
+					#### [Firefox OS](http://www.mozilla.org/en-US/firefox/partners/) | [Gaia](https://github.com/mozilla-b2g/gaia) | [RequireJS](http://requirejs.org/) | [volo](http://volojs.org/)
+
 					[http://jrburke.com/talks/vanwebperf](http://jrburke.com/talks/vanwebperf)
 				</script></section>
-
 
 				<style>
 					html.state2 body {
@@ -146,10 +148,11 @@
 					data-markdown><script type="text/template">
 					## Native vs web
 
-					* Excuse to spend money/attention on experience
+					* Both local UI. Java, ObjectiveC, or Web
 					* Access to platform APIs
-					* Leverage web and use wrappers, phonegap
-					* FirefoxOS: best of both: platform APIs and web.
+					* Excuse to spend money/attention on experience
+					* Leverage web and use wrappers, [phonegap](http://phonegap.com/)
+					* FirefoxOS: platform APIs and web.
 
 				</script></section>
 
@@ -160,8 +163,8 @@
 					data-markdown><script type="text/template">
 					## Web vs store distribution
 
-					* Web: better terms, less platform access
-					* Store: better platform access, better user assurance, worse terms
+					* Web: less platform API access, better terms, less user assurance
+					* Store: better platform API access, worse terms, better user assurance
 
 				</script></section>
 
@@ -173,6 +176,8 @@
 					## Decide
 
 					* What does it need to do? Platform APIs
+					* [forecast.io](http://blog.forecast.io/announcing-forecast/)
+					* [Financial Times](http://apps.ft.com/ftwebapp/)
 
 				</script></section>
 
@@ -207,8 +212,24 @@
 					data-markdown><script type="text/template">
 					## Local UI
 
-					* AppCache
-					* "app" wrappers: FirefoxOS: .zip file, Phonegap for others.
+					* [AppCache](http://www.html5rocks.com/en/tutorials/appcache/beginner/)
+					* [Packaged](https://developer.mozilla.org/en-US/docs/Web/Apps/Packaged_apps): .zip file, [phonegap](http://phonegap.com/) for others.
+
+				</script></section>
+
+
+				<style>html.state13 body { background:url("images/img13.jpg");}</style>
+				<section data-state="state13"
+					data-attr-desc="Blue Square Thing"
+					data-attr="http://www.flickr.com/photos/bluesquarething/4922277369/"
+					data-markdown><script type="text/template">
+					## AppCache
+
+					* [Has issues](http://alistapart.com/article/application-cache-is-a-douchebag), limit to single page web apps.
+					* Compared to native wrappers though, not so bad.
+					* Will have to support multiple versions.
+					* [Some](http://lists.w3.org/Archives/Public/public-webapps/2013JanMar/0977.html) [proposals](https://github.com/slightlyoff/NavigationController/blob/master/explainer.md) for future
+					* [Events/test app](https://github.com/volojs/create-responsive-template)
 
 				</script></section>
 
@@ -219,51 +240,11 @@
 					data-markdown><script type="text/template">
 					## Local data
 
-					* IndexedDB
-					* localStorage (warning)
-					* Cookies!
+					* IndexedDB ->
+					* localStorage (profile)
+					* Cookies! (keep API on other domain)
+					* local save + innerHTML: fast restore
 
-				</script></section>
-
-
-				<style>html.state13 body { background:url("images/img13.jpg");}</style>
-				<section data-state="state13"
-					data-attr-desc="Blue Square Thing"
-					data-attr="http://www.flickr.com/photos/bluesquarething/4922277369/"
-					data-markdown><script type="text/template">
-					## AppCache
-
-					* Has issues [link]
-					* Compared to native wrappers though, not so bad.
-					* Limit to single page web apps.
-					* Will have to support multiple versions.
-					* Proposals for future [links]
-
-				</script></section>
-
-
-				<style>html.state13 body { background:url("images/img13.jpg");}</style>
-				<section data-state="state13"
-					data-attr-desc="Blue Square Thing"
-					data-attr="http://www.flickr.com/photos/bluesquarething/4922277369/"
-					data-markdown><script type="text/template">
-					## AppCache
-
-					* Helper script to generate appcache
-					* Events/test app
-
-				</script></section>
-
-				<style>html.state14 body { background:url("images/img18.jpg");}</style>
-				<section data-state="state14"
-					data-attr-desc="waferboard"
-					data-attr="http://www.flickr.com/photos/waferboard/3846343985/"
-					data-markdown><script type="text/template">
-					## Delay loading
-
-					* Script parse and execution
-					* You know I'm going to say modules
-					* Home roll it
 				</script></section>
 
 
@@ -281,6 +262,19 @@
 				</script></section>
 
 
+				<style>html.state14 body { background:url("images/img18.jpg");}</style>
+				<section data-state="state14"
+					data-attr-desc="waferboard"
+					data-attr="http://www.flickr.com/photos/waferboard/3846343985/"
+					data-markdown><script type="text/template">
+					## Delay loading
+
+					* Script parse and execution
+					* You know I'm going to say modules
+					* [alameda](https://github.com/requirejs/alameda) : [optimizer](http://requirejs.org/docs/optimization.html) : [node-madge](https://github.com/pahen/node-madge)
+					* [Roll your own](https://github.com/mozilla-b2g/gaia/blob/master/shared/js/lazy_loader.js)
+				</script></section>
+
 				<style>html.state16 body { background:url("images/img11.jpg");}</style>
 				<section data-state="state16"
 					data-attr-desc="sillydog"
@@ -288,10 +282,10 @@
 					data-markdown><script type="text/template">
 					## Runtime performance
 
-					* iOS WebView penalty
-					* Web Workers, help with scroll perf
+					* [Web Workers](https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers), help with scroll perf
 					* Limit DOM
-					* Cooperatively multitask (setTimeout)
+					* Use CSS transitions/GPU, transition: transform, translateX
+					* Cooperatively multitask (setTimeout, [setImmediate](https://developer.mozilla.org/en-US/docs/Web/API/window.setImmediate))
 
 				</script></section>
 
@@ -303,11 +297,9 @@
 					data-markdown><script type="text/template">
 					## Shameless plug
 
-					* FirefoxOS, develop there, wrap it for others
-					* Web runtime on Android
-					* Nice SDK/dev tools [links]
-					* Develop an app, get a phone
-					* We are really huge in Europe
+					* [Firefox OS](http://www.mozilla.org/en-US/firefox/partners/)
+					* [Web runtime on Android](http://www.mozilla.org/en-US/apps/)
+					* [Nice SDK/dev tools](https://hacks.mozilla.org/2013/05/firefox-os-simulator-3-0-released/)
 
 				</script></section>
 
